@@ -1,4 +1,4 @@
-apiVersion: template.openshift.io/v1
+ apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
   creationTimestamp: null
@@ -9,10 +9,10 @@ objects:
   metadata:
     annotations:
       alpha.image.policy.openshift.io/resolve-names: '*'
-      app.openshift.io/vcs-ref: master
-      app.openshift.io/vcs-uri: https://gitlab.com/devopsdean/openshift.git
+      app.openshift.io/vcs-ref: main
+      app.openshift.io/vcs-uri: https://github.com/Nishvika/petclinic.git
       deployment.kubernetes.io/revision: "2"
-      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"openshift-git:latest","namespace":"milindchavan-24-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"openshift-git\")].image","pause":"false"}]'
+      image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"openshift-git:latest","namespace":"sravanivarma1320-dev"},"fieldPath":"spec.template.spec.containers[?(@.name==\"openshift-git\")].image","pause":"false"}]'
       openshift.io/generated-by: OpenShiftWebConsole
     creationTimestamp: null
     generation: 2
@@ -86,8 +86,8 @@ objects:
   kind: Service
   metadata:
     annotations:
-      app.openshift.io/vcs-ref: master
-      app.openshift.io/vcs-uri: https://gitlab.com/devopsdean/openshift.git
+      app.openshift.io/vcs-ref: main
+      app.openshift.io/vcs-uri: https://github.com/Nishvika/petclinic.git
       openshift.io/generated-by: OpenShiftWebConsole
     creationTimestamp: null
     labels:
@@ -136,7 +136,7 @@ objects:
       app.openshift.io/runtime-version: openjdk-11-el7
     name: "${app}"
   spec:
-    host: openshift-git-milindchavan-24-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
+    host: openshift-console.apps.sandbox-m2.ll9k.p1.openshiftapps.com
     port:
       targetPort: 8080-tcp
     to:
@@ -150,7 +150,7 @@ objects:
       - lastTransitionTime: 2021-07-03T16:37:13Z
         status: "True"
         type: Admitted
-      host: openshift-git-milindchavan-24-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com
+      host: openshift-console.apps.sandbox-m2.ll9k.p1.openshiftapps.com
       routerCanonicalHostname: apps.sandbox-m2.ll9k.p1.openshiftapps.com
       routerName: default
       wildcardPolicy: None
